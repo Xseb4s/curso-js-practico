@@ -5,7 +5,7 @@ const desktopMenu = $('.desktop-menu');
 const burgerIcon = $('.menu');
 const mobileMenu = $('.mobile-menu');
 const cartIcon = $('.navbar-shopping-cart');
-const aside = $('.product-detail');
+const shoppingCart = $('#shopping-cart-container');
 const cardsContainer = $('.cards-container');
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
@@ -13,17 +13,17 @@ burgerIcon.addEventListener('click', toggleMobileMenu);
 cartIcon.addEventListener('click', toggleCartAside)
 
 function toggleDesktopMenu(){
-    const isAsideClosed = aside.classList.contains('inactive');
+    const isAsideClosed = shoppingCart.classList.contains('inactive');
     if(!isAsideClosed){
-        aside.classList.add('inactive')
+        shoppingCart.classList.add('inactive')
     }
     desktopMenu.classList.toggle('inactive');
 }
 function toggleMobileMenu(){
-    const isAsideClosed=aside.classList.contains('inactive');
+    const isAsideClosed=shoppingCart.classList.contains('inactive');
 
     if(!isAsideClosed){
-        aside.classList.add('inactive');
+        shoppingCart.classList.add('inactive');
     }
     mobileMenu.classList.toggle('inactive');
 }
@@ -32,7 +32,7 @@ function toggleCartAside() {
     if(!isMobileMenuClosed){
         mobileMenu.classList.add('inactive')
     }
-    aside.classList.toggle('inactive')
+    shoppingCart.classList.toggle('inactive')
 }
 function renderProducts(arr) {
     for (product of arr){
